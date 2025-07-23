@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Multilingual Translator 🌐</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='4_style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="glass-card">
+        <h1>🌍 AI Multilingual Translator</h1>
+
+        <form method="post" class="translate-form">
+            <textarea name="text" placeholder="Enter text to translate..." required></textarea>
+
+            <div class="language-selectors">
+                <select name="source_lang" required>
+                    {% for code, name in languages.items() %}
+                        <option value="{{ code }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+
+                <div class="swap">⇄</div>
+
+                <select name="target_lang" required>
+                    {% for code, name in languages.items() %}
+                        <option value="{{ code }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit">Translate ✨</button>
+        </form>
+
+        {% if translated_text %}
+        <div class="output">
+            <h2>📝 Translated Text:</h2>
+            <p>{{ translated_text }}</p>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error-msg">
+            {{ error }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
