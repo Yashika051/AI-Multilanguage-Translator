@@ -14,6 +14,7 @@ This project's primary goal is to create an intuitive, AI-powered translation to
 •	Provides an interface that is aesthetically pleasing, responsive, and tidy.
 
 Technical Stack:
+
 Frontend:
 •	HTML – Used to create the structure of the web page, including input fields, dropdowns, and buttons.
 •	CSS – Applied basic styling to elements for layout, spacing, and appearance.
